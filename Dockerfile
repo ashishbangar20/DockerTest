@@ -1,5 +1,6 @@
 FROM python:3.11-slim
 
+# Set working directory
 WORKDIR /app
 
 # Install system dependencies
@@ -24,8 +25,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy source code
 COPY . .
 
-# ✅ Fix for PermissionError
+# Fix for Jenkins PermissionError
 RUN mkdir -p /app/logs && chmod -R 777 /app/logs
 
-# Run tests
-CMD ["pytest", "--browser=chrome"]
+# Run tests by default (you can override in Jenkins)
+CMD ["pytest", "--html=reports/report.html", "--self-contained-html"]

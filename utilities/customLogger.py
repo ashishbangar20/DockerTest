@@ -4,7 +4,7 @@ import os
 class LogGen:
     @staticmethod
     def loggen():
-        logs_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'logs'))
+        logs_dir = "/tmp/logs"  # ✅ safe location inside container
         os.makedirs(logs_dir, exist_ok=True)
 
         log_path = os.path.join(logs_dir, 'automation.log')

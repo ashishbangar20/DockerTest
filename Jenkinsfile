@@ -26,9 +26,13 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    docker.image("${IMAGE_NAME}").inside {
-                        sh 'pytest --html=reports/report.html --self-contained-html'
-                    }
+                    bat """
+                    docker run --rm ^
+                        -v %cd%:/app ^
+                        -w /app ^
+                        ${IMAGE_NAME} ^
+                        pytest --html=${REPORT_DIR}/report.html --self-contained-html
+                    """
                 }
             }
         }
@@ -36,7 +40,7 @@ pipeline {
         stage('Archive Report') {
             steps {
                 archiveArtifacts artifacts: "${REPORT_DIR}/**", allowEmptyArchive: true
-                junit '**/reports/*.xml' // optional, if using JUnit-style reporting
+                // junit '**/reports/*.xml' // optional
             }
         }
     }

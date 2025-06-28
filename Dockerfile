@@ -24,5 +24,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy source code
 COPY . .
 
+# ✅ Fix for PermissionError
+RUN mkdir -p /app/logs && chmod -R 777 /app/logs
+
 # Run tests
 CMD ["pytest", "--browser=chrome"]

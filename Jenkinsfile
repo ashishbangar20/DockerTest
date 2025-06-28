@@ -28,7 +28,7 @@ pipeline {
                 script {
                     bat """
                     docker run --rm ^
-                        -v %cd%:/app ^
+                        -v %%CD%%:/app ^
                         -w /app ^
                         ${IMAGE_NAME} ^
                         pytest --html=${REPORT_DIR}/report.html --self-contained-html
@@ -40,7 +40,6 @@ pipeline {
         stage('Archive Report') {
             steps {
                 archiveArtifacts artifacts: "${REPORT_DIR}/**", allowEmptyArchive: true
-                // junit '**/reports/*.xml' // optional
             }
         }
     }
@@ -51,10 +50,10 @@ pipeline {
             cleanWs()
         }
         success {
-            echo 'Test pipeline completed successfully.'
+            echo '✅ Test pipeline completed successfully.'
         }
         failure {
-            echo 'Pipeline failed!'
+            echo '❌ Pipeline failed!'
         }
     }
 }

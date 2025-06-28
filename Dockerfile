@@ -25,8 +25,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy source code
 COPY . .
 
-# Fix for Jenkins PermissionError
-RUN mkdir -p /app/logs && chmod -R 777 /app/logs
+# ✅ Fix PermissionError for logs and reports directories
+RUN mkdir -p /app/logs /app/reports && chmod -R 777 /app/logs /app/reports
 
-# Run tests by default (you can override in Jenkins)
+# Default test command (can be overridden in Jenkinsfile)
 CMD ["pytest", "--html=reports/report.html", "--self-contained-html"]

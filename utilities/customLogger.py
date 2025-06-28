@@ -4,7 +4,7 @@ import os
 class LogGen:
     @staticmethod
     def loggen():
-        logs_dir = os.path.join(os.path.abspath(os.curdir), 'logs')
+        logs_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'logs'))
         os.makedirs(logs_dir, exist_ok=True)
 
         log_path = os.path.join(logs_dir, 'automation.log')
@@ -12,7 +12,6 @@ class LogGen:
         logger = logging.getLogger("automationLogger")
         logger.setLevel(logging.DEBUG)
 
-        # Avoid duplicate handlers
         if not logger.handlers:
             file_handler = logging.FileHandler(log_path)
             formatter = logging.Formatter('%(asctime)s: %(levelname)s: %(message)s',

@@ -28,7 +28,7 @@ pipeline {
                 script {
                     bat """
                     docker run --rm ^
-                        -v %%CD%%:/app ^
+                        -v "${env.WORKSPACE}:/app" ^
                         -w /app ^
                         ${IMAGE_NAME} ^
                         pytest --html=${REPORT_DIR}/report.html --self-contained-html

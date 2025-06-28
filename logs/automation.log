@@ -1,0 +1,6 @@
+06/28/2025 06:16:01 PM: INFO: === Test_001_Login Started ===
+06/28/2025 06:16:04 PM: INFO: Navigated to: https://opensource-demo.orangehrmlive.com/
+06/28/2025 06:16:05 PM: INFO: Entered Username
+06/28/2025 06:16:05 PM: INFO: Entered Password
+06/28/2025 06:16:05 PM: INFO: Clicked Login Button
+06/28/2025 06:16:05 PM: INFO: Login Test Passed

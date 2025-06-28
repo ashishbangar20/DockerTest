@@ -1,0 +1,7 @@
+pytest==7.2.0                      # ✔️ Stable Pytest version
+selenium~=4.33.0                  # ✔️ Modern Selenium, supports recent Chrome versions
+pytest-html                       # ✔️ For HTML reports
+pytest-xdist                      # ✔️ Enables parallel testing
+openpyxl                          # ✔️ For Excel data-driven tests
+allure-pytest                     # ✔️ Allure reporting
+chromedriver-autoinstaller~=0.6.4 # ✔️ Best choice for Docker/local use

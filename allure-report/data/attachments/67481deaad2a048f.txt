@@ -1,0 +1,6 @@
+[32mINFO    [0m automationLogger:test_login.py:17 === Test_001_Login Started ===
+[32mINFO    [0m automationLogger:test_login.py:20 Navigated to: https://opensource-demo.orangehrmlive.com/
+[32mINFO    [0m automationLogger:test_login.py:24 Entered Username
+[32mINFO    [0m automationLogger:test_login.py:27 Entered Password
+[32mINFO    [0m automationLogger:test_login.py:30 Clicked Login Button
+[32mINFO    [0m automationLogger:test_login.py:33 Login Test Passed

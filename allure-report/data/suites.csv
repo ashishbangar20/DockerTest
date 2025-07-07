@@ -1,0 +1,3 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","9565","test_login","testCases","Mon Jul 07 21:48:19 IST 2025","passed","Mon Jul 07 21:48:28 IST 2025","TestLogin","test_login","",""
+"","20969","test_search_user_with_multiple_filters","testCases","Mon Jul 07 21:48:35 IST 2025","passed","Mon Jul 07 21:48:56 IST 2025","TestSearchUser","test_search_user","",""
